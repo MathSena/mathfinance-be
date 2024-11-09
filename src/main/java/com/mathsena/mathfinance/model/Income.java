@@ -13,11 +13,11 @@ import java.time.LocalDate;
 @Data
 public class Income {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String description;
-    private BigDecimal amount;
-    private LocalDate dateIncome;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
+  private String description;
+  private BigDecimal amount;
+  private LocalDate dateIncome;
 }

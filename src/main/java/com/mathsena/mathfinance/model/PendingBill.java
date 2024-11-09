@@ -11,11 +11,12 @@ import java.time.LocalDate;
 @Entity
 @Data
 public class PendingBill {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String description;
-    private BigDecimal amount;
-    private boolean paid;
-    private LocalDate dueDate;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+
+  private String description;
+  private BigDecimal amount;
+  private boolean paid;
+  private LocalDate dueDate;
 }

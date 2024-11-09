@@ -11,12 +11,12 @@ import java.time.LocalDate;
 @Entity
 @Data
 public class Expense {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String description;
-    private BigDecimal amount;
-    private String category;
-    private LocalDate date;
-}
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
+  private String description;
+  private BigDecimal amount;
+  private String category;
+  private LocalDate date;
+}
