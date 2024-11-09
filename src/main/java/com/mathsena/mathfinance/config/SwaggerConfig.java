@@ -14,19 +14,26 @@ public class SwaggerConfig {
   @Bean
   public OpenAPI customOpenAPI() {
     return new OpenAPI()
-        .components(
-            new Components()
-                .addSecuritySchemes(
+            .components(componentsConfig())
+            .info(apiInfo())
+            .addSecurityItem(new SecurityRequirement().addList("bearerAuth"));
+  }
+
+  private Components componentsConfig() {
+    return new Components()
+            .addSecuritySchemes(
                     "bearerAuth",
                     new SecurityScheme()
-                        .type(SecurityScheme.Type.HTTP)
-                        .scheme("bearer")
-                        .bearerFormat("JWT")))
-        .info(
-            new Info()
-                .title("MathFinance API")
-                .version("1.0")
-                .description("API documentation for the MathFinance project"))
-        .addSecurityItem(new SecurityRequirement().addList("bearerAuth"));
+                            .type(SecurityScheme.Type.HTTP)
+                            .scheme("bearer")
+                            .bearerFormat("JWT")
+            );
+  }
+
+  private Info apiInfo() {
+    return new Info()
+            .title("MathFinance API")
+            .version("1.0")
+            .description("API documentation for the MathFinance project");
   }
 }
